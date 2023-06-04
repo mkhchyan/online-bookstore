@@ -1,16 +1,11 @@
-import Footer from "./components/footer/Footer"
-import Header from "./components/header/Header"
-import Hero from "./components/hero/Hero"
+import { LandingPage } from "./pages/landing-page";
 
 function App() {
-
   return (
     <>
-     <Header />
-     <Hero />
-     <Footer />
+      <LandingPage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

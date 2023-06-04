@@ -6,16 +6,9 @@ const Header = () => {
       <div className="border py-3 px-6">
         <div className="flex justify-between">
           <div className="flex items-center">
-            <span className="ml-2 font-bold text-rose-700 text-2xl">Books.am</span>
-          </div>
-
-          <div className="ml-6 flex flex-1 gap-x-3">
-
-            <input
-              type="text"
-              className="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm"
-              value="Search..."
-            />
+            <span className="ml-2 font-bold text-rose-700 text-2xl">
+              Books.am
+            </span>
           </div>
 
           <div className="ml-2 flex">
@@ -27,7 +20,7 @@ const Header = () => {
               Sign in
             </Button>
           </div>
-        </div>         
+        </div>
       </div>
     </div>
   );
