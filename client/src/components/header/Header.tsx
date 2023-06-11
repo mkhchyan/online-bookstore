@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../button/Button";
 
 const Header = () => {
@@ -12,9 +13,12 @@ const Header = () => {
           </div>
 
           <div className="ml-2 flex">
-            <Button className="ml-2 flex cursor-pointer text-white items-center gap-x-1 rounded-lg border py-2 px-4 bg-rose-700">
+            <Link
+              to="/signup"
+              className="ml-2 flex cursor-pointer text-white items-center gap-x-1 rounded-lg border py-2 px-4 bg-rose-700"
+            >
               Sign Up
-            </Button>
+            </Link>
 
             <Button className="ml-2 flex cursor-pointer hover:text-white items-center gap-x-1 rounded-lg border py-2 px-4 hover:bg-rose-700">
               Sign in
