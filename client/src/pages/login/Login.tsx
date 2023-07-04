@@ -20,8 +20,7 @@ const Login = () => {
 
   const onSubmit = (data: any) => {
     dispatch(login(data))
-    console.log(data)
-      navigate("/")
+      navigate("/profile")
   }
 
   return (
