@@ -3,7 +3,7 @@
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { Controller, ValidationService, FieldErrors, ValidateError, TsoaRoute, HttpStatusCodeLiteral, TsoaResponse, fetchMiddlewares } from '@tsoa/runtime';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { UserController } from './../src/controllers/UserController.js';
+import { UserController } from './../src/controllers/UserController';
 import type { RequestHandler, Router } from 'express';
 
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -12,9 +12,9 @@ const models: TsoaRoute.Models = {
     "SignupResponse": {
         "dataType": "refObject",
         "properties": {
-            "message": {"dataType":"string","required":true},
-            "username": {"dataType":"string","required":true},
-            "email": {"dataType":"string","required":true},
+            "message": { "dataType": "string", "required": true },
+            "username": { "dataType": "string", "required": true },
+            "email": { "dataType": "string", "required": true },
         },
         "additionalProperties": false,
     },
@@ -22,9 +22,9 @@ const models: TsoaRoute.Models = {
     "SignupRequest": {
         "dataType": "refObject",
         "properties": {
-            "username": {"dataType":"string","required":true},
-            "email": {"dataType":"string","required":true},
-            "password": {"dataType":"string","required":true},
+            "username": { "dataType": "string", "required": true },
+            "email": { "dataType": "string", "required": true },
+            "password": { "dataType": "string", "required": true },
         },
         "additionalProperties": false,
     },
@@ -39,13 +39,13 @@ export function RegisterRoutes(app: Router) {
     //  NOTE: If you do not see routes for all of your controllers in this file, then you might not have informed tsoa of where to look
     //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
     // ###########################################################################################################
-        app.post('/v1/users/signup',
-            ...(fetchMiddlewares<RequestHandler>(UserController)),
-            ...(fetchMiddlewares<RequestHandler>(UserController.prototype.signup)),
+    app.post('/v1/users/signup',
+        ...(fetchMiddlewares<RequestHandler>(UserController)),
+        ...(fetchMiddlewares<RequestHandler>(UserController.prototype.signup)),
 
-            function UserController_signup(request: any, response: any, next: any) {
+        function UserController_signup(request: any, response: any, next: any) {
             const args = {
-                    requestBody: {"in":"body","name":"requestBody","required":true,"ref":"SignupRequest"},
+                requestBody: { "in": "body", "name": "requestBody", "required": true, "ref": "SignupRequest" },
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -57,13 +57,13 @@ export function RegisterRoutes(app: Router) {
                 const controller = new UserController();
 
 
-              const promise = controller.signup.apply(controller, validatedArgs as any);
-              promiseHandler(controller, promise, response, undefined, next);
+                const promise = controller.signup.apply(controller, validatedArgs as any);
+                promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
             }
         });
-        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
@@ -112,8 +112,8 @@ export function RegisterRoutes(app: Router) {
 
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
-    function responder(response: any): TsoaResponse<HttpStatusCodeLiteral, unknown>  {
-        return function(status, data, headers) {
+    function responder(response: any): TsoaResponse<HttpStatusCodeLiteral, unknown> {
+        return function (status, data, headers) {
             returnHandler(response, status, data, headers);
         };
     };
@@ -121,31 +121,31 @@ export function RegisterRoutes(app: Router) {
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
     function getValidatedArgs(args: any, request: any, response: any): any[] {
-        const fieldErrors: FieldErrors  = {};
+        const fieldErrors: FieldErrors = {};
         const values = Object.keys(args).map((key) => {
             const name = args[key].name;
             switch (args[key].in) {
                 case 'request':
                     return request;
                 case 'query':
-                    return validationService.ValidateParam(args[key], request.query[name], name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                    return validationService.ValidateParam(args[key], request.query[name], name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                 case 'queries':
-                    return validationService.ValidateParam(args[key], request.query, name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                    return validationService.ValidateParam(args[key], request.query, name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                 case 'path':
-                    return validationService.ValidateParam(args[key], request.params[name], name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                    return validationService.ValidateParam(args[key], request.params[name], name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                 case 'header':
-                    return validationService.ValidateParam(args[key], request.header(name), name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                    return validationService.ValidateParam(args[key], request.header(name), name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                 case 'body':
-                    return validationService.ValidateParam(args[key], request.body, name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                    return validationService.ValidateParam(args[key], request.body, name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                 case 'body-prop':
-                    return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, 'body.', {"noImplicitAdditionalProperties":"throw-on-extras"});
+                    return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, 'body.', { "noImplicitAdditionalProperties": "throw-on-extras" });
                 case 'formData':
                     if (args[key].dataType === 'file') {
-                        return validationService.ValidateParam(args[key], request.file, name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                        return validationService.ValidateParam(args[key], request.file, name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                     } else if (args[key].dataType === 'array' && args[key].array.dataType === 'file') {
-                        return validationService.ValidateParam(args[key], request.files, name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                        return validationService.ValidateParam(args[key], request.files, name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                     } else {
-                        return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, undefined, {"noImplicitAdditionalProperties":"throw-on-extras"});
+                        return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, undefined, { "noImplicitAdditionalProperties": "throw-on-extras" });
                     }
                 case 'res':
                     return responder(response);
