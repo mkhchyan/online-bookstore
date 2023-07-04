@@ -9,7 +9,7 @@ export class UserController extends Controller {
 
         try {
             if (!username || !email || !password) {
-                this.setStatus(400); // Bad Request
+                this.setStatus(400);
                 return {
                     message: 'Please provide a valid username, email, and password.',
                     username: '',

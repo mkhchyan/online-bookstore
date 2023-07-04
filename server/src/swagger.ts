@@ -9,7 +9,7 @@ const options = {
         },
         basePath: '/'
     },
-    apis: ['path/to/your/api/routes/*.js'] // Path to your API routes
+    apis: ['/routes/*.js,*.ts']
 };
 
 const specs = swaggerJsdoc(options);
